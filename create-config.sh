@@ -44,7 +44,7 @@ export K8SHA_KEEPALIVED_AUTH=412f7dc3bfed32194d1600c483e10ad1d
 export K8SHA_CALICO_REACHABLE_IP=192.168.122.1
 
 # kubernetes CIDR pod subnet
-export K8SHA_CIDR=10.1.0.0
+export K8SHA_CIDR=10.1.0.0/16
 
 ##############################
 # please do not modify anything below

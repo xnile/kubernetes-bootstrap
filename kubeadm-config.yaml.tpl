@@ -13,4 +13,4 @@ apiServerCertSANs:
 controlPlaneEndpoint: "K8SHA_VIP:16443"
 networking:
   # This CIDR is a Calico default. Substitute or remove for your CNI provider.
-  podSubnet: "K8SHA_CIDR/16"
+  podSubnet: "K8SHA_CIDR"

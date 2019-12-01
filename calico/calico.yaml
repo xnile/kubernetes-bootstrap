@@ -1,3 +1,6 @@
+# Calico Version v3.10.1
+# curl https://docs.projectcalico.org/v3.10/manifests/calico.yaml -O
+
 ---
 # Source: calico/templates/calico-config.yaml
 # This ConfigMap is used to configure a self-hosted Calico installation.
