@@ -46,6 +46,9 @@ export K8SHA_CALICO_REACHABLE_IP=192.168.122.1
 # kubernetes CIDR pod subnet
 export K8SHA_CIDR=10.1.0.0/16
 
+# kubernetes CIDR SVC subnet
+export K8SSVC_CIDR=10.254.0.0/16
+
 ##############################
 # please do not modify anything below
 ##############################
