@@ -68,7 +68,7 @@ sed \
 -e "s/K8SHA_IP2/${K8SHA_IP2}/g" \
 -e "s/K8SHA_IP3/${K8SHA_IP3}/g" \
 -e "s#K8SHA_VIP#${K8SHA_VIP}#g" \
--e "s#K8SHA_CIDR#${K8SSVC_CIDR}#g" \
+-e "s#K8SSVC_CIDR#${K8SSVC_CIDR}#g" \
 kubeadm-config.yaml.tpl > kubeadm-config.yaml
 
 echo "create kubeadm-config.yaml files success. kubeadm-config.yaml"
