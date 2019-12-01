@@ -67,8 +67,8 @@ sed \
 -e "s/K8SHA_IP1/${K8SHA_IP1}/g" \
 -e "s/K8SHA_IP2/${K8SHA_IP2}/g" \
 -e "s/K8SHA_IP3/${K8SHA_IP3}/g" \
--e "s/K8SHA_VIP/${K8SHA_VIP}/g" \
--e "s/K8SHA_CIDR/${K8SHA_CIDR}/g" \
+-e "s#K8SHA_VIP#${K8SHA_VIP}#g" \
+-e "s#K8SHA_CIDR#${K8SSVC_CIDR}#g" \
 kubeadm-config.yaml.tpl > kubeadm-config.yaml
 
 echo "create kubeadm-config.yaml files success. kubeadm-config.yaml"
@@ -144,7 +144,7 @@ echo "create nginx-lb files success. config/$K8SHA_HOST3/nginx-lb/"
 # create calico yaml file
 sed \
 -e "s/K8SHA_CALICO_REACHABLE_IP/${K8SHA_CALICO_REACHABLE_IP}/g" \
--e "s/K8SHA_CIDR/${K8SHA_CIDR}/g" \
+-e "s#K8SHA_CIDR#${K8SHA_CIDR}#g" \
 calico/calico.yaml.tpl > calico/calico.yaml
 
 echo "create calico.yaml file success. calico/calico.yaml"
