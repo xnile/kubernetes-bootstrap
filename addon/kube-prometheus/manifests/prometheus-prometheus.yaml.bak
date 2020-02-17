@@ -14,13 +14,11 @@ spec:
   baseImage: quay.io/prometheus/prometheus
   nodeSelector:
     kubernetes.io/os: linux
-  podMonitorNamespaceSelector: {}
   podMonitorSelector: {}
   replicas: 2
   resources:
     requests:
       memory: 400Mi
-  retention: 1y
   ruleSelector:
     matchLabels:
       prometheus: k8s
@@ -33,11 +31,3 @@ spec:
   serviceMonitorNamespaceSelector: {}
   serviceMonitorSelector: {}
   version: v2.11.0
-  storage:
-    volumeClaimTemplate:
-      spec:
-        storageClassName: alicloud-disk-efficiency
-        accessModes: ["ReadWriteOnce"]
-        resources:
-          requests:
-            storage: 50Gi

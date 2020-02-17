@@ -16,11 +16,3 @@ spec:
     runAsUser: 1000
   serviceAccountName: alertmanager-main
   version: v0.18.0
-  storage:
-    volumeClaimTemplate:
-      spec:
-        storageClassName: rook-ceph-block
-        accessModes: ["ReadWriteOnce"]
-        resources:
-          requests:
-            storage: 10Gi

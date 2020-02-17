@@ -14,6 +14,7 @@ spec:
   baseImage: quay.io/prometheus/prometheus
   nodeSelector:
     kubernetes.io/os: linux
+  podMonitorNamespaceSelector: {}
   podMonitorSelector: {}
   replicas: 2
   resources:
@@ -31,3 +32,12 @@ spec:
   serviceMonitorNamespaceSelector: {}
   serviceMonitorSelector: {}
   version: v2.11.0
+  storage:
+    volumeClaimTemplate:
+      spec:
+        storageClassName: rook-ceph-block
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 10Gi
+  retention: 1y

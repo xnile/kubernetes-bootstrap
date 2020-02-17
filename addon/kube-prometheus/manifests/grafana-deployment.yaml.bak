@@ -15,15 +15,6 @@ spec:
       labels:
         app: grafana
     spec:
-      initContainers:
-      - name: volume-mount-hack
-        image: busybox
-        command: ["sh", "-c", "chown -R 65534:65534 /hack"]
-        volumeMounts:
-        - name: grafana-storage
-          mountPath: /hack
-        securityContext:
-          privileged: true
       containers:
       - image: grafana/grafana:6.4.3
         name: grafana
@@ -41,9 +32,6 @@ spec:
           requests:
             cpu: 100m
             memory: 100Mi
-        securityContext:
-         runAsNonRoot: true
-         runAsUser: 65534
         volumeMounts:
         - mountPath: /var/lib/grafana
           name: grafana-storage
@@ -128,11 +116,13 @@ spec:
           readOnly: false
       nodeSelector:
         beta.kubernetes.io/os: linux
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 65534
       serviceAccountName: grafana
       volumes:
-      - name: grafana-storage
-        persistentVolumeClaim:
-          claimName: grafana-storage
+      - emptyDir: {}
+        name: grafana-storage
       - name: grafana-datasources
         secret:
           secretName: grafana-datasources
