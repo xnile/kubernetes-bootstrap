@@ -40,4 +40,5 @@ spec:
         resources:
           requests:
             storage: 10Gi
+  #storage.tsdb.retention.time 数据保留时间
   retention: 1y

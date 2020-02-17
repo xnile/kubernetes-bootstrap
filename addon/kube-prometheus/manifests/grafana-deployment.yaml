@@ -15,6 +15,7 @@ spec:
       labels:
         app: grafana
     spec:
+      #处理目录权限问题
       initContainers:
       - name: volume-mount-hack
         image: busybox
@@ -132,6 +133,7 @@ spec:
       volumes:
       - name: grafana-storage
         persistentVolumeClaim:
+          #刚创建的pvc
           claimName: grafana-storage
       - name: grafana-datasources
         secret:
